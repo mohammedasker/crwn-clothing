@@ -6,13 +6,16 @@ import { withRouter } from "react-router-dom";
 
 const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
 	<div
-		style={{
-			backgroundImage: `url(${imageUrl})`
-		}}
-		className="background-image"
 		className={`${size} menu-item`}
 		onClick={() => history.push(`${match.url}${linkUrl}`)}
 	>
+		<div
+			style={{
+				backgroundImage: `url(${imageUrl})`
+			}}
+			className="background-image"
+		/>
+
 		<div className="content">
 			<h1 className="title">{title.toUpperCase()}</h1>
 			<span className="subtitle">SHOP NOW</span>
